@@ -24,9 +24,11 @@ def home():
 def plot():
     if request.method == 'POST':
         img = BytesIO()
-        df=pd.read_csv('IPL/Cleaned.csv')
+        df=pd.read_csv('Cleaned.csv')
         a=request.form['mycheckbox1']
         b=request.form['mycheckbox2']
+        if(a==b):
+            return render_template("error.html")
         if(a=='Royal'):
             a='Royal Challengers Bangalore'
         elif(a=='Rajasthan'):
