@@ -253,8 +253,8 @@ def plot():
         plt.close()
         img.seek(0)
         plot_url7 = base64.b64encode(img.getvalue()).decode('utf8')
-
-    return render_template('plot.html', plot_url1=plot_url1,plot_url2=plot_url2,plot_url3 =plot_url3,plot_url4 =plot_url4,plot_url5 =plot_url5,plot_url6 =plot_url6,plot_url7 =plot_url7 )
-
+        return render_template('plot.html', plot_url1=plot_url1,plot_url2=plot_url2,plot_url3 =plot_url3,plot_url4 =plot_url4,plot_url5 =plot_url5,plot_url6 =plot_url6,plot_url7 =plot_url7 )
+    return render_template("error.html")
+    
 if __name__=="__main__":
     app.run(host="0.0.0.0")
