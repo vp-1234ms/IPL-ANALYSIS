@@ -1,1 +1,10 @@
 Flask
+seaborn
+matplotlib
+matplotlib.pyplot
+flask
+flask
+io
+base64
+pandas
+flask_cors
