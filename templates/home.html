@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+<header>
+    <a href="#" class="logo">Cricket Lovers</a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+    <nav class="navbar">
+        <ul>
+            <form method="POST" action="/plot">
+            <li><a href="#">Select Team 1 +</a>
+                <ul>
+                    <form method="POST" action="/plot">
+                        {% for i in range(10) %}
+                            <li><input type="radio" name="mycheckbox1" value={{team1[i]}} required="required">&nbsp;{{team1[i]}}</li>
+                        {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Select Team 2 +</a>
+                <ul>
+                    <form method="POST" action="/plot">
+                        {% for i in range(10) %}
+                            <li><input type="radio" name="mycheckbox2" value={{team2[i]}} required="required">&nbsp;{{team2[i]}}</li>
+                        {% endfor %}
+                </ul>
+            </li>
+            <li><a href="#">Submit +</a>
+                <ul>
+                <input type='submit' class="task">
+                <ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+   
+</body>
+</html>
+
+
+ 
