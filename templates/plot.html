@@ -1,11 +1,81 @@
 <!doctype html>
-<title>Analysis</title>
-<section>
-  <img src="data:image/png;base64, {{ plot_url1 }}">
-  <img src="data:image/png;base64, {{ plot_url2 }}">
-  <img src="data:image/png;base64, {{ plot_url3 }}">
-  <img src="data:image/png;base64, {{ plot_url4 }}">
-  <img src="data:image/png;base64, {{ plot_url5 }}">
-  <img src="data:image/png;base64, {{ plot_url6 }}">
-  <img src="data:image/png;base64, {{ plot_url7 }}">
-</section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Image Gallery</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        /* Main container for the title and gallery */
+        main {
+            width: 100%;
+            max-width: 1400px;
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Image grid layout */
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased min-width for larger images */
+            gap: 20px;
+        }
+
+        /* Image styling */
+        section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        /* Hover animation */
+        section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>Data Analysis - Visual Insights</h1>
+        <section>
+            <img src="data:image/png;base64, {{ plot_url1 }}" alt="Plot 1">
+            <img src="data:image/png;base64, {{ plot_url2 }}" alt="Plot 2">
+            <img src="data:image/png;base64, {{ plot_url3 }}" alt="Plot 3">
+            <img src="data:image/png;base64, {{ plot_url4 }}" alt="Plot 4">
+            <img src="data:image/png;base64, {{ plot_url5 }}" alt="Plot 5">
+            <img src="data:image/png;base64, {{ plot_url6 }}" alt="Plot 6">
+            <img src="data:image/png;base64, {{ plot_url7 }}" alt="Plot 7">
+        </section>
+    </main>
+
+</body>
+</html>
